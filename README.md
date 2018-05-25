@@ -17,3 +17,4 @@ This boilerplate use:
 - BROWSER SYNC
 - AUTOPREFIXER
 - UGLIFY
+- NORMALIZE CSS
