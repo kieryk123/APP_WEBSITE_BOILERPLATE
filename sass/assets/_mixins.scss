@@ -1,3 +1,4 @@
+// responsive brakpoints
 @mixin breakpoint($class) {
 	@if $class == apples {
     @media (max-width: 320px) { @content; }
@@ -8,7 +9,7 @@
   }
 
   @else if $class == sm {
-    @media (max-width: 768px) { @content; }
+    @media (max-width: 767px) { @content; }
   }
 
   @else if $class == md {
@@ -22,4 +23,52 @@
   @else {
     @media (max-width: $class) { @content; }
   }
+}
+
+// pseudo elements
+@mixin ps($display: block, $pos: absolute, $content: ''){
+  display: $display;
+  position: $pos;
+  content: $content;
+}
+
+// gradient
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'ver' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'hor' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+// arrow
+@mixin arrow($direction, $size, $color) {
+   width: 0;
+   height: 0;
+   @if ($direction == left) {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-right: $size solid $color;
+   }
+   @else if ($direction == right) {
+      border-top: $size solid transparent;
+      border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+   }
+   @else if ($direction == down) {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-top: $size solid $color;
+   }
+   @else {
+      border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+   }
 }
