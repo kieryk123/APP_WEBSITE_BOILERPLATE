@@ -18,6 +18,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# node files
+node_modules
+
 # =========================
 # Operating System Files
 # =========================
+.DS_Store

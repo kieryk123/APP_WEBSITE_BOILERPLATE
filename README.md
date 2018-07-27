@@ -6,15 +6,15 @@ How to use:
 1) Edit package.json info
 2) Edit index.html meta tags
 3) Run command line
-4) Run: npm install
-5) Run: gulp
+4) Run "npm install" to install all dependencies
+5) Run "npm run watch" to watch files in development mode or run "npm run build" to build production bundle
 6) Enjoy coding!
 
 This boilerplate use:
-- GULP.JS
+- WEBPACK 4
 - SASS
 - BABEL
-- BROWSER SYNC
 - AUTOPREFIXER
 - UGLIFY
 - NORMALIZE CSS
+- SOURCE MAPS
