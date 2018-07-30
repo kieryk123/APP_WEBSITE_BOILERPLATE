@@ -10,6 +10,9 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // include the css autoprefixer
 const Autoprefixer = require('autoprefixer');
 
+// include Browsersync plugin
+const BrowserSync = require('browser-sync-webpack-plugin');
+
 const autoprefixerOptions = {
   browsers: [
     'last 2 version',
@@ -89,6 +92,18 @@ module.exports = {
     // extract css into dedicated file
     new MiniCssExtractPlugin({
       filename: './dist/css/main.min.css'
+    }),
+    // run local server
+    new BrowserSync({
+      // browse to http://localhost:3000/ during development,
+      // curent directory is being served
+      host: 'localhost',
+      port: 3000,
+      server: { baseDir: ['./'] },
+      // add files to watch for changes
+      files: './*.html',
+      // don't show notifications in the browser
+      notify: false
     })
   ],
   optimization: {
