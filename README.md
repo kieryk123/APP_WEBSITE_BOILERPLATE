@@ -8,7 +8,7 @@ How to use:
 3) Run command line
 4) Run "npm install" to install all dependencies
 5) Run "npm run watch" to watch files in development mode or run "npm run build" to build production bundle
-6) Open "https://localhost/3000"
+6) Open "https://localhost:3000"
 7) Enjoy coding!
 
 This boilerplate use:
